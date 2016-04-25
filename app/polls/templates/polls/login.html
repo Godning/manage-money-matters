@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>login</title>
+    <link href="{% static 'polls/css/bootstrap.css' %}" rel="stylesheet">
+    <style>
+      .form-control{
+        width:200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <lable for="username" class="control-label">name:</lable>
+      <input type="text" class="form-control" name="username" id="username" placeholder="username">
+    </div>
+    <div class="form-group">
+      <label for="password" class="control-label">password:</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="password">
+    </div>
+    <button class="btn btn-default" id="login">login</button>
+
+    <script src="{% static 'polls/js/jquery-2.2.2.min.js' %}"></script>
+    <script src="{% static 'polls/js/bootstrap.js' %}"></script>
+    <script src="{% static 'polls/js/login.js' %}"></script>
+  </body>
+</html>
