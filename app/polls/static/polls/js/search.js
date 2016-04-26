@@ -4,9 +4,13 @@ $(document).ready(function(){
 			search_mouth : $('#search_mouth').val()
 		},function(results){
 			console.log(results);
-			$('.mouth_show').html(results['mouth']);
-			$('.time').html(results['day']+':'+results['cost']);
-			$('.remarks').html(results['remarks']);
+			if (results['success']){ 
+				$('.mouth_show').html(results['mouth']);
+				$('.time').html(results['day']+':'+results['cost']);
+				$('.remarks').html(results['remarks']);
+			}else{
+				location = '/polls/login/';
+			}
 		});
 	});
 });

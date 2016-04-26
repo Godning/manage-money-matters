@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>search</title>
+    <link href="{% static 'polls/css/bootstrap.css' %}" rel="stylesheet">
+    <style>
+      .form-control{
+        width:200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <lable for="day_input" class="control-label">day:</lable>
+      <input type="text" class="form-control" name="day_input" id="day_input" placeholder="day">
+    </div>
+    <div class="form-group">
+      <lable for="cost_input" class="control-label">cost:</lable>
+      <input type="number" class="form-control" name="cost_input" id="cost_input" placeholder="cost">
+    </div>
+    <div class="form-group">
+      <lable for="remarks_input" class="control-label">remarks:</lable>
+      <input type="text" class="form-control" name="remarks_input" id="remarks_input" placeholder="remarks">
+    </div>
+    <button class="btn btn-default" id="submit">submit</button>
+
+    <script src="{% static 'polls/js/jquery-2.2.2.min.js' %}"></script>
+    <script src="{% static 'polls/js/bootstrap.js' %}"></script>
+    <script src="{% static 'polls/js/details.js' %}"></script>
+  </body>
+</html>

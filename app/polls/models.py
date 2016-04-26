@@ -14,6 +14,7 @@ class Mouth(models.Model):
 	person = models.ForeignKey(Person)
 	mouth = models.IntegerField()
 	initial = models.IntegerField()
+	residu = models.IntegerField()
 
 class Details(models.Model):
 	mouth = models.ForeignKey(Mouth)

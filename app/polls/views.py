@@ -28,17 +28,39 @@ def login(request):
 def search(request):
 	if request.method == 'POST':
 		search_mouth = request.POST['search_mouth']
-		username = request.session['username']
-		if username:
+		results = {}
+		results['success'] = False
+		if 'username' in request.session:
+			print('memeda')
+			username = request.session['username']
 			person = Person.objects.get(username=username)
 			mouth = Mouth.objects.get(person=person,mouth=search_mouth)
 			details = Details.objects.get(mouth=mouth)
 			if mouth:
-				resluts = {}
-				resluts['mouth'] = details.mouth.mouth
-				resluts['day'] = details.day
-				resluts['remarks'] = details.remarks
-				resluts['cost'] = details.cost
-				return JsonResponse(resluts)
-		return render(request,'polls/login.html')
+				print('heihei')
+				results['success'] = True
+				results['mouth'] = details.mouth.mouth
+				results['day'] = details.day
+				results['remarks'] = details.remarks
+				results['cost'] = details.cost
+				return JsonResponse(results)
+		else:
+			print('hhh')
+			return JsonResponse(results)
 	return render(request,'polls/search.html')
+
+def details(request):
+	if request.method == 'POST':
+		username = request.session['username']
+		if username:
+			person = Person.objects.get(username=username)
+			mouth = Mouth.objects.get(person=person)
+			details = Details.objects.get(mouth=mouth)
+			day = request.POST['day_input']
+			cost = request.POST['cost_input']
+			remarks = request.POST['remarks_input']
+			#mouth.residu = mouth.residu-cost
+
+
+
+
