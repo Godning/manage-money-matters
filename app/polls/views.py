@@ -61,18 +61,18 @@ def search(request):
 			return JsonResponse(results)
 	return render(request,'polls/search.html')
 
-def details(request):
-	if request.method == 'POST':
-		username = request.session['username']
-		if username:
-			person = Person.objects.get(username=username)
-			mouth = Mouth.objects.get(person=person)
-			details = Details.objects.get(mouth=mouth)
-			day = request.POST['day_input']
-			cost = request.POST['cost_input']
-			remarks = request.POST['remarks_input']
-			mouth.residu = str(float(mouth.residu)-float(cost))
-
+def center(request):
+	# if request.method == 'POST':
+	# 	username = request.session['username']
+	# 	if username:
+	# 		person = Person.objects.get(username=username)
+	# 		mouth = Mouth.objects.get(person=person)
+	# 		details = Details.objects.get(mouth=mouth)
+	# 		day = request.POST['day_input']
+	# 		cost = request.POST['cost_input']
+	# 		remarks = request.POST['remarks_input']
+	# 		mouth.residu = str(float(mouth.residu)-float(cost))
+	return render(request,'polls/user_center.html')
 
 
 
