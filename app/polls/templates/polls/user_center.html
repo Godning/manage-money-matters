@@ -11,7 +11,20 @@
     <link href="{% static 'polls/css/center.css' %}" rel="stylesheet">
   </head>
   <body>
-    
+
+    <div class="form-group">
+      <label for="add_day">day</label>
+      <input type="text" id="add_day" name="add_day" placeholder="day" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="add_cost">cost</label>
+      <input type="text" id="add_cost" name="add_cost" placeholder="your cost" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="add_remarks">remarks</label>
+      <input type="text" id="add_remarks" name="add_remarks" placeholder="your remarks" class="form-control">
+    </div>
+    <button class="btn btn-default" id="btn_submit">submit</button>
     
 
     <script src="{% static 'polls/js/jquery-2.2.2.min.js' %}"></script>
